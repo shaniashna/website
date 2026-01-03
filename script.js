@@ -32,17 +32,6 @@ function renderSite() {
         `).join('');
     }
 
-    // --- Use Cases ---
-    const useCasesGrid = document.getElementById('use-cases-grid');
-    if (useCasesGrid && c.useCases) {
-        useCasesGrid.innerHTML = c.useCases.map(item => `
-            <div class="card">
-                <h3>${item.title}</h3>
-                <p>${item.description}</p>
-            </div>
-        `).join('');
-    }
-
     // --- Testimonials ---
     const testimonialsContainer = document.getElementById('testimonials-container');
     if (testimonialsContainer && c.testimonials) {

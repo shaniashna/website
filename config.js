@@ -4,8 +4,8 @@
 
 const siteConfig = {
   // --- General Info ---
-  businessName: "Ashna Consulting",
-  tagline: "Your partner in navigating Berlin's bureaucracy.",
+  businessName: "Pusella Consulting",
+  tagline: "Your mushy partner in navigating Berlin's bureaucracy.",
   description: "Specializing in dealing with bureaucracy in Berlin. We make the complex simple.",
 
   // --- Contact Info ---
@@ -47,15 +47,5 @@ const siteConfig = {
     }
   ],
 
-  // --- Use Cases ---
-  useCases: [
-    {
-      title: "Retail Expansion",
-      description: "Helped a local retail chain expand to 50+ locations nationwide within 2 years."
-    },
-    {
-      title: "Cloud Migration",
-      description: "Seamlessly migrated a legacy financial system to the cloud with zero downtime."
-    }
-  ]
+
 };

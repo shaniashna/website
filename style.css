@@ -4,21 +4,22 @@
     --color-bg: #ffffff;
     --color-text: #1a1a1a;
     --color-text-muted: #666666;
-    --color-primary: #000000; /* Minimalist black */
+    --color-primary: #000000;
+    /* Minimalist black */
     --color-primary-hover: #333333;
     --color-secondary-bg: #f9f9f9;
     --color-dark-bg: #111111;
     --color-light-text: #ffffff;
     --color-border: #eaeaea;
-    
+
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    
+
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 4rem;
     --spacing-xl: 6rem;
-    
+
     --container-width: 1200px;
     --border-radius: 4px;
     --transition: 0.3s ease;
@@ -59,16 +60,32 @@ img {
 }
 
 /* --- Typography --- */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     line-height: 1.2;
     margin-bottom: var(--spacing-sm);
     font-weight: 700;
 }
 
-h1 { font-size: 3rem; letter-spacing: -0.03em; }
-h2 { font-size: 2.25rem; letter-spacing: -0.02em; }
-h3 { font-size: 1.5rem; letter-spacing: -0.01em; }
-p { margin-bottom: var(--spacing-sm); }
+h1 {
+    font-size: 3rem;
+    letter-spacing: -0.03em;
+}
+
+h2 {
+    font-size: 2.25rem;
+    letter-spacing: -0.02em;
+}
+
+h3 {
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
 
 /* --- Utilities --- */
 .container {
@@ -77,9 +94,17 @@ p { margin-bottom: var(--spacing-sm); }
     margin: 0 auto;
 }
 
-.text-light { color: var(--color-light-text); }
-.text-light-muted { color: rgba(255, 255, 255, 0.7); }
-.text-muted { color: var(--color-text-muted); }
+.text-light {
+    color: var(--color-light-text);
+}
+
+.text-light-muted {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.text-muted {
+    color: var(--color-text-muted);
+}
 
 .grid {
     display: grid;
@@ -175,9 +200,31 @@ p { margin-bottom: var(--spacing-sm); }
 /* --- Hero --- */
 .hero {
     padding: var(--spacing-xl) 0;
-    text-align: center;
-    max-width: 800px;
     margin: 0 auto;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .hero p {
@@ -197,7 +244,7 @@ p { margin-bottom: var(--spacing-sm); }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .card h3 {
@@ -253,15 +300,15 @@ p { margin-bottom: var(--spacing-sm); }
     display: inline-flex;
     align-items: center;
     padding: 1rem 2rem;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     color: white;
     border-radius: var(--border-radius);
     font-weight: 500;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .contact-link:hover {
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* --- Footer --- */
@@ -279,18 +326,30 @@ p { margin-bottom: var(--spacing-sm); }
         --spacing-xl: 4rem;
     }
 
-    h1 { font-size: 2.5rem; }
-    
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-bottom: var(--spacing-md);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
     .nav {
-        display: none; /* Simple hiding for first iteration */
+        display: none;
+        /* Simple hiding for first iteration */
         /* To make a proper mobile menu would require more JS/CSS */
         /* For MVP phase 1, we can just let it hide or stack */
     }
-    
+
     .menu-btn {
         display: block;
     }
-    
+
     .nav.active {
         display: block;
         position: absolute;
@@ -301,7 +360,7 @@ p { margin-bottom: var(--spacing-sm); }
         border-bottom: 1px solid var(--color-border);
         padding: var(--spacing-sm);
     }
-    
+
     .nav-list {
         flex-direction: column;
         align-items: flex-start;
