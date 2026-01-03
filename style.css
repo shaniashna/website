@@ -1,0 +1,313 @@
+/* style.css */
+
+:root {
+    --color-bg: #ffffff;
+    --color-text: #1a1a1a;
+    --color-text-muted: #666666;
+    --color-primary: #000000; /* Minimalist black */
+    --color-primary-hover: #333333;
+    --color-secondary-bg: #f9f9f9;
+    --color-dark-bg: #111111;
+    --color-light-text: #ffffff;
+    --color-border: #eaeaea;
+    
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+    
+    --container-width: 1200px;
+    --border-radius: 4px;
+    --transition: 0.3s ease;
+}
+
+/* --- Reset & Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+}
+
+h1 { font-size: 3rem; letter-spacing: -0.03em; }
+h2 { font-size: 2.25rem; letter-spacing: -0.02em; }
+h3 { font-size: 1.5rem; letter-spacing: -0.01em; }
+p { margin-bottom: var(--spacing-sm); }
+
+/* --- Utilities --- */
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.text-light { color: var(--color-light-text); }
+.text-light-muted { color: rgba(255, 255, 255, 0.7); }
+.text-muted { color: var(--color-text-muted); }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    background-color: var(--color-primary);
+    color: var(--color-light-text);
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    border: 1px solid var(--color-primary);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.section-alt {
+    background-color: var(--color-secondary-bg);
+}
+
+.section-dark {
+    background-color: var(--color-dark-bg);
+    color: var(--color-light-text);
+}
+
+.section-title {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+/* --- Header --- */
+.header {
+    padding: var(--spacing-sm) 0;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.nav-list {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.nav-list a {
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.nav-list a:hover {
+    color: var(--color-text-muted);
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* --- Hero --- */
+.hero {
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-md);
+}
+
+/* --- Cards (Services, Use Cases) --- */
+.card {
+    background: var(--color-bg);
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.card p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* --- Testimonials --- */
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.testimonial {
+    text-align: center;
+    padding: var(--spacing-md);
+    background-color: var(--color-secondary-bg);
+    border-radius: var(--border-radius);
+}
+
+.quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: var(--spacing-sm);
+}
+
+.author {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* --- Contact --- */
+.contact-container {
+    text-align: center;
+}
+
+.contact-links {
+    margin-top: var(--spacing-md);
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.contact-link:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* --- Footer --- */
+.footer {
+    padding: var(--spacing-md) 0;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    :root {
+        --spacing-xl: 4rem;
+    }
+
+    h1 { font-size: 2.5rem; }
+    
+    .nav {
+        display: none; /* Simple hiding for first iteration */
+        /* To make a proper mobile menu would require more JS/CSS */
+        /* For MVP phase 1, we can just let it hide or stack */
+    }
+    
+    .menu-btn {
+        display: block;
+    }
+    
+    .nav.active {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        border-bottom: 1px solid var(--color-border);
+        padding: var(--spacing-sm);
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-links {
+        flex-direction: column;
+    }
+}
