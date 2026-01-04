@@ -42,6 +42,12 @@ function renderSite() {
         }).join('');
     }
 
+    // --- Services Disclaimer ---
+    const disclaimerEl = document.getElementById('services-disclaimer');
+    if (disclaimerEl && c.servicesDisclaimer) {
+        disclaimerEl.innerText = c.servicesDisclaimer;
+    }
+
     // --- Testimonials ---
     const testimonialsContainer = document.getElementById('testimonials-container');
     if (testimonialsContainer && c.testimonials) {
