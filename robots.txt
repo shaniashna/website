@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ashnaconsulting.de/sitemap.xml
+Sitemap: https://shaniashna.de/sitemap.xml
