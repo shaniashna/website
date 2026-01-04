@@ -18,10 +18,10 @@ const siteConfig = {
   // --- Services ---
   // This disclaimer appears near the services section
   servicesDisclaimer: `
-    <strong>Important Note:</strong> As your relocation consultant, my goal is to guide you through the German bureaucracy. Please note that I am not a certified attorney or insurance broker. My services provide orientation and practical assistance, but do not constitute binding legal or insurance advice. I recommend consulting a specialist for specific legal guarantees. Liability for the final approval of applications is excluded.
-    <br><br>
-    <strong>Haftungsausschluss:</strong> Als Ihre Relocation-Beraterin unterstütze ich Sie bei der Orientierung in Deutschland. Ich weise jedoch darauf hin, dass ich keine Rechtsanwältin oder Versicherungsvermittlerin bin. Meine Informationen dienen der Hilfestellung und ersetzen keine verbindliche Rechts- oder Versicherungsberatung durch Fachleute. Eine Haftung für den Erfolg oder die Ablehnung von Anträgen wird nicht übernommen.
-    <br><br>
+    Important Note: As your relocation consultant, my goal is to guide you through the German bureaucracy. Please note that I am not a certified attorney or insurance broker. My services provide orientation and practical assistance, but do not constitute binding legal or insurance advice. I recommend consulting a specialist for specific legal guarantees. Liability for the final approval of applications is excluded.
+    
+    Haftungsausschluss: Als Ihre Relocation-Beraterin unterstütze ich Sie bei der Orientierung in Deutschland. Ich weise jedoch darauf hin, dass ich keine Rechtsanwältin oder Versicherungsvermittlerin bin. Meine Informationen dienen der Hilfestellung und ersetzen keine verbindliche Rechts- oder Versicherungsberatung durch Fachleute. Eine Haftung für den Erfolg oder die Ablehnung von Anträgen wird nicht übernommen.
+
     Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.
   `,
 
