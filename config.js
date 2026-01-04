@@ -6,7 +6,7 @@ const siteConfig = {
   // --- General Info ---
   businessName: "Ashna Consulting",
   tagline: "Your partner in navigating Berlin's bureaucracy.",
-  description: "Specializing in dealing with bureaucracy in Berlin. We make the complex simple.",
+  description: "Specializing in dealing with bureaucracy in Berlin. We make the complex simple. Services available in Farsi, English, and German.",
 
   // --- Contact Info ---
   contact: {
@@ -16,7 +16,14 @@ const siteConfig = {
   },
 
   // --- Services ---
-  servicesDisclaimer: "Gemäß § 19 UStG wird keine Umsatzsteuer berechnet. Note: We support you with bureaucratic procedures but do not provide legal advice.",
+  // This disclaimer appears near the services section
+  servicesDisclaimer: `
+    <strong>Important Note:</strong> As your relocation consultant, my goal is to guide you through the German bureaucracy. Please note that I am not a certified attorney or insurance broker. My services provide orientation and practical assistance, but do not constitute binding legal or insurance advice. I recommend consulting a specialist for specific legal guarantees. Liability for the final approval of applications is excluded.
+    <br><br>
+    <strong>Haftungsausschluss:</strong> Als Ihre Relocation-Beraterin unterstütze ich Sie bei der Orientierung in Deutschland. Ich weise jedoch darauf hin, dass ich keine Rechtsanwältin oder Versicherungsvermittlerin bin. Meine Informationen dienen der Hilfestellung und ersetzen keine verbindliche Rechts- oder Versicherungsberatung durch Fachleute. Eine Haftung für den Erfolg oder die Ablehnung von Anträgen wird nicht übernommen.
+    <br><br>
+    Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.
+  `,
 
   services: [
     {
@@ -46,9 +53,29 @@ const siteConfig = {
       title: "Bureaucracy & Paperwork",
       description: "Expert support for specific bureaucratic hurdles.",
       features: [
-        "<strong>3. Visa & Residence Permit Support:</strong> We help you prepare and organize your document folder for the Ausländerbehörde. We review your forms to ensure everything is correct before you submit them, minimizing the risk of rejection.",
-        "<strong>4. Paperwork Rescue (Letter Translation):</strong> Received a confusing German letter? Send us a photo. We explain exactly what it means and tell you what action to take.",
-        "<strong>5. In-Person \"Bureaucracy Buddy\" (Beistand):</strong> You don't have to go alone. We accompany you to the Bürgeramt, Ausländerbehörde, or other authorities. We act as your witness (Beistand), translate the conversation, and ensure you are treated fairly."
+        "<strong>Visa & Residence Permit Support:</strong> We help you prepare and organize your document folder for the Ausländerbehörde. We review your forms to ensure everything is correct before you submit them, minimizing the risk of rejection.",
+        "<strong>Paperwork Rescue (Letter Translation):</strong> Received a confusing German letter? Send us a photo. We explain exactly what it means and tell you what action to take.",
+        "<strong>In-Person \"Bureaucracy Buddy\" (Beistand):</strong> You don't have to go alone. We accompany you to the Bürgeramt, Ausländerbehörde, or other authorities. We act as your witness (Beistand), translate the conversation, and ensure you are treated fairly."
+      ]
+    },
+    {
+      title: "Education & Career",
+      description: "Guidance for your professional and educational journey in Germany.",
+      features: [
+        "<strong>Degree Recognition & Documents:</strong> We guide you through the complex process of recognizing your foreign diplomas or certificates in Germany and explain the exact steps required for your specific situation.",
+        "<strong>Freelance & Self-Employment Setup:</strong> Starting your own business? We help you fill out the Tax Registration form (Fragebogen zur steuerlichen Erfassung) to get your Tax Number (Steuernummer) and provide professional German Invoice Templates so you can get paid.",
+        "<strong>Ausbildung (Apprenticeship) Coaching:</strong> We help you find an Ausbildung and prepare a professional German application (Bewerbung), including your CV and motivation letter, to increase your chances of getting hired."
+      ]
+    },
+    {
+      title: "Daily Life & Family",
+      description: "Assistance with everyday hurdles, appointments, and family needs.",
+      features: [
+        "<strong>Driving License Support:</strong> Whether you need to swap/convert your foreign license (Umschreibung) or get a German license from scratch, we guide you through the requirements, first-aid courses, and Car Registration appointments, and paperwork.",
+        "<strong>Appointment Booking:</strong> Struggling to find a doctor? We help you find and book appointments with English or Farsi-speaking doctors, specialists, or other service providers.",
+        "<strong>Family Support Services:</strong> We assist with the essential paperwork for families, including applications for Child Benefit (Kindergeld), Parental Allowance (Elterngeld), and Daycare Vouchers (Kita-Gutschein).",
+        "<strong>Housing Application Check:</strong> Increase your chances. We organize your Schufa and documents and write a professional German cover letter for landlords.",
+        "<strong>30-Minute \"Ask Me Anything\" Call:</strong> Confused? Book a quick call. We answer your specific questions about life or problems in Berlin."
       ]
     }
   ],
