@@ -24,12 +24,22 @@ function renderSite() {
     // --- Services ---
     const servicesGrid = document.getElementById('services-grid');
     if (servicesGrid && c.services) {
-        servicesGrid.innerHTML = c.services.map(service => `
+        servicesGrid.innerHTML = c.services.map(service => {
+            let featuresHtml = '';
+            if (service.features && service.features.length > 0) {
+                featuresHtml = `<ul class="service-features">
+                    ${service.features.map(f => `<li>${f}</li>`).join('')}
+                </ul>`;
+            }
+
+            return `
             <div class="card">
                 <h3>${service.title}</h3>
-                <p>${service.description}</p>
+                <p class="service-description">${service.description}</p>
+                ${featuresHtml}
             </div>
-        `).join('');
+            `;
+        }).join('');
     }
 
     // --- Testimonials ---
@@ -51,7 +61,9 @@ function renderSite() {
             html += `<a href="mailto:${c.contact.email}" class="contact-link">Email Us</a>`;
         }
         if (c.contact.phone) {
-            html += `<a href="tel:${c.contact.phone}" class="contact-link">Call ${c.contact.phone}</a>`;
+            // Clean phone number for WhatsApp URL: remove (0) and non-digits
+            const waNumber = c.contact.phone.replace('(0)', '').replace(/[^0-9]/g, '');
+            html += `<a href="https://wa.me/${waNumber}" class="contact-link" target="_blank">WhatsApp</a>`;
         }
         contactContainer.innerHTML = html;
     }

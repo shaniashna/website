@@ -251,10 +251,35 @@ p {
     margin-bottom: var(--spacing-xs);
 }
 
+.service-description {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    /* margin-bottom is handled by p styles, but let's be specific */
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-features {
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--color-border);
+}
+
+.service-features li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
 .card p {
     color: var(--color-text-muted);
     font-size: 0.95rem;
     margin-bottom: 0;
+}
+
+/* Ensure description text specifically has margin if features follow */
+.card .service-description {
+    margin-bottom: var(--spacing-sm);
 }
 
 /* --- Testimonials --- */
