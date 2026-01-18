@@ -24,19 +24,33 @@ function renderSite() {
     // --- Services ---
     const servicesGrid = document.getElementById('services-grid');
     if (servicesGrid && c.services) {
-        servicesGrid.innerHTML = c.services.map(service => {
-            let featuresHtml = '';
-            if (service.features && service.features.length > 0) {
-                featuresHtml = `<ul class="service-features">
-                    ${service.features.map(f => `<li>${f}</li>`).join('')}
-                </ul>`;
+        servicesGrid.innerHTML = c.services.map((service, index) => {
+            let detailsHtml = '';
+            if (service.details && service.details.length > 0) {
+                detailsHtml = `
+                <div class="service-details-container">
+                    <button class="btn-text toggle-details-btn" onclick="toggleDetails(${index})">
+                        Show details ▼
+                    </button>
+                    <div id="details-${index}" class="service-details hidden">
+                        <ul class="service-features-list">
+                            ${service.details.map(d => `<li>${d}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>`;
             }
 
             return `
-            <div class="card">
-                <h3>${service.title}</h3>
-                <p class="service-description">${service.description}</p>
-                ${featuresHtml}
+            <div class="card service-card">
+                <div class="card-content">
+                    <h3>${service.title}</h3>
+                    <p class="service-price">${service.price}</p>
+                    <p class="service-description">${service.description}</p>
+                    ${detailsHtml}
+                </div>
+                <div class="card-action">
+                    <a href="#contact" class="btn btn-sm btn-contact">Contact Me</a>
+                </div>
             </div>
             `;
         }).join('');
@@ -88,5 +102,18 @@ function setupMobileMenu() {
         btn.addEventListener('click', () => {
             nav.classList.toggle('active');
         });
+    }
+}
+
+function toggleDetails(index) {
+    const detailsEl = document.getElementById(`details-${index}`);
+    const btn = document.querySelector(`button[onclick="toggleDetails(${index})"]`);
+
+    if (detailsEl.classList.contains('hidden')) {
+        detailsEl.classList.remove('hidden');
+        btn.innerText = 'Hide details ▲';
+    } else {
+        detailsEl.classList.add('hidden');
+        btn.innerText = 'Show details ▼';
     }
 }

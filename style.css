@@ -3,14 +3,15 @@
 :root {
     --color-bg: #ffffff;
     --color-text: #1a1a1a;
-    --color-text-muted: #666666;
-    --color-primary: #000000;
-    /* Minimalist black */
-    --color-primary-hover: #333333;
-    --color-secondary-bg: #f9f9f9;
+    --color-text-muted: #000000;
+    --color-primary: #4169E1;
+    /* Royal Blue */
+    --color-primary-hover: #27408B;
+    --color-secondary-bg: #f0f4ff;
+    /* Very light blue tint */
     --color-dark-bg: #111111;
     --color-light-text: #ffffff;
-    --color-border: #eaeaea;
+    --color-border: #dbeafe;
 
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
@@ -21,8 +22,10 @@
     --spacing-xl: 6rem;
 
     --container-width: 1200px;
-    --border-radius: 4px;
+    --border-radius: 8px;
     --transition: 0.3s ease;
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 /* --- Reset & Base --- */
@@ -62,10 +65,12 @@ img {
 /* --- Typography --- */
 h1,
 h2,
-h3 {
+h3,
+h4 {
     line-height: 1.2;
     margin-bottom: var(--spacing-sm);
     font-weight: 700;
+    color: var(--color-primary);
 }
 
 h1 {
@@ -106,10 +111,16 @@ p {
     color: var(--color-text-muted);
 }
 
+.text-center {
+    text-align: center;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-md);
+    align-items: start;
+    /* Ensure cards align to top */
 }
 
 .btn {
@@ -121,11 +132,14 @@ p {
     font-weight: 500;
     border: 1px solid var(--color-primary);
     cursor: pointer;
+    box-shadow: var(--shadow-sm);
 }
 
 .btn:hover {
     background-color: var(--color-primary-hover);
     border-color: var(--color-primary-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
 }
 
 .btn-sm {
@@ -142,7 +156,7 @@ p {
 }
 
 .section-dark {
-    background-color: var(--color-dark-bg);
+    background-color: var(--color-primary);
     color: var(--color-light-text);
 }
 
@@ -186,7 +200,7 @@ p {
 }
 
 .nav-list a:hover {
-    color: var(--color-text-muted);
+    color: var(--color-primary);
 }
 
 .menu-btn {
@@ -195,6 +209,7 @@ p {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+    color: var(--color-text);
 }
 
 /* --- Hero --- */
@@ -224,13 +239,89 @@ p {
 .hero-image img {
     max-width: 100%;
     border-radius: var(--border-radius);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
 }
 
 .hero p {
     font-size: 1.25rem;
     color: var(--color-text-muted);
     margin-bottom: var(--spacing-md);
+}
+
+/* --- About Section --- */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    /* Limit width for better reading experience */
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Removed .about-image styles as image is removed */
+
+.about-text {
+    width: 100%;
+}
+
+.about-text h2.section-title {
+    text-align: center !important;
+    /* Force center */
+}
+
+.mission-quote {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-style: italic;
+    color: #333;
+    /* Dark grey for mission statement */
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.about-text h3 {
+    margin-top: var(--spacing-md);
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+/* --- Pricing Section --- */
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    margin-top: var(--spacing-md);
+}
+
+.pricing-table th,
+.pricing-table td {
+    padding: 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.pricing-table th {
+    background-color: var(--color-secondary-bg);
+    color: var(--color-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+.pricing-table tr:hover {
+    background-color: #fafafa;
+}
+
+.pricing-table td:last-child {
+    font-weight: 600;
+    text-align: right;
+    white-space: nowrap;
 }
 
 /* --- Cards (Services, Use Cases) --- */
@@ -240,46 +331,109 @@ p {
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
     transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+}
+
+.card-content {
+    flex-grow: 1;
 }
 
 .card h3 {
     margin-bottom: var(--spacing-xs);
+    color: var(--color-primary);
+}
+
+.service-price {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
 }
 
 .service-description {
     color: var(--color-text-muted);
     font-size: 0.95rem;
-    /* margin-bottom is handled by p styles, but let's be specific */
     margin-bottom: var(--spacing-sm);
 }
 
-.service-features {
+.toggle-details-btn {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    cursor: pointer;
+    font-weight: 500;
+    padding: 0;
+    margin-top: var(--spacing-xs);
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+.toggle-details-btn:hover {
+    color: var(--color-primary-hover);
+}
+
+.service-details {
     margin-top: var(--spacing-sm);
     padding-top: var(--spacing-sm);
     border-top: 1px solid var(--color-border);
+    animation: fadeIn 0.3s ease;
 }
 
-.service-features li {
+.service-details.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-features-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.service-features-list li {
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
     color: var(--color-text-muted);
     line-height: 1.5;
+    position: relative;
+    padding-left: 1.2rem;
 }
 
-.card p {
-    color: var(--color-text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 0;
+.service-features-list li::before {
+    content: "•";
+    color: var(--color-primary);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
 }
 
-/* Ensure description text specifically has margin if features follow */
-.card .service-description {
-    margin-bottom: var(--spacing-sm);
+.card-action {
+    margin-top: var(--spacing-md);
+    text-align: center;
+}
+
+.btn-contact {
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 /* --- Testimonials --- */
@@ -292,20 +446,23 @@ p {
 .testimonial {
     text-align: center;
     padding: var(--spacing-md);
-    background-color: var(--color-secondary-bg);
+    background-color: white;
+    box-shadow: var(--shadow-sm);
     border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
 }
 
 .quote {
     font-size: 1.1rem;
     font-style: italic;
     margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
 }
 
 .author {
     font-weight: 600;
     font-size: 0.9rem;
-    color: var(--color-text-muted);
+    color: var(--color-primary);
 }
 
 /* --- Contact --- */
@@ -330,10 +487,12 @@ p {
     border-radius: var(--border-radius);
     font-weight: 500;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
 }
 
 .contact-link:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
 }
 
 /* --- Footer --- */
@@ -351,9 +510,15 @@ p {
         --spacing-xl: 4rem;
     }
 
+    .hero-container,
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Reverse hero so image is on top on mobile if desired, or keep standard flow */
     .hero-container {
         flex-direction: column-reverse;
-        text-align: center;
     }
 
     .hero-image {
@@ -366,9 +531,6 @@ p {
 
     .nav {
         display: none;
-        /* Simple hiding for first iteration */
-        /* To make a proper mobile menu would require more JS/CSS */
-        /* For MVP phase 1, we can just let it hide or stack */
     }
 
     .menu-btn {
@@ -388,10 +550,15 @@ p {
 
     .nav-list {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .contact-links {
         flex-direction: column;
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+        padding: 0.8rem;
     }
 }
